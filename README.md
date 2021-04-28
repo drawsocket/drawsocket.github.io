@@ -1,3 +1,3 @@
 # drawsocket.github.io
 
-website for the [drawsocket](drawsocket.github.io) project
+website for the [drawsocket](https://drawsocket.github.io) project
