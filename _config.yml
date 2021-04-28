@@ -1,0 +1,14 @@
+#theme: minima
+github:
+  repository_url: https://github.com/HfMT-ZM4/drawsocket
+
+title: drawsocket
+description: server/client plaform for realtime browser-based media, created at the Univeristy for Music and Theater Hamburg, 2019.
+# logo: # filename of a logo image that has been placed into your images directory
+
+social_links:
+  github:  https://github.com/HfMT-ZM4/drawsocket
+    
+header_pages:
+- download.md
+- api.md

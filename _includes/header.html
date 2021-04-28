@@ -1,0 +1,60 @@
+<header>
+    
+    <div class="logo">
+        <img src="assets/images/drawsocket_logo_72.png" />
+    </div>
+
+    <div id="connectionLine"></div>
+    
+    <div class="menu_wrapper">
+        <div class="menu_item">about</div>
+        <div class="menu_item">installation</div>
+        <div class="menu_item">overview</div>
+        <div class="menu_item">API</div>
+        <div class="menu_item">examples</div>
+        <div class="menu_item">github</div>
+    </div>
+    <div id="drawsocket" class="white-on-black-text">drawsocket</div>
+</header>
+
+<footer>
+    <img id="hfmt_logo" src="assets/images/hfmt-logos.png" />
+   
+    <div id="imprint" class="white-on-black-text">imprint/data protection </div>
+
+</footer>
+
+<script>
+    
+    window.addEventListener("load", ()=>{
+
+        document.querySelectorAll(".menu_item").forEach( e =>{
+            console.log("setting event for ", e);
+
+            e.addEventListener("click", ()=>{
+                if( e.innerHTML == "github" )
+                    window.location.href = "https://github.com/HfMT-ZM4/drawsocket";
+                else
+                    window.location.href = e.innerHTML.toLowerCase()+".html";
+            })
+        
+        });
+
+        document.querySelector("#imprint").addEventListener("click", ()=>{
+            window.location.href = "imprint.html";        
+        });
+
+        document.getElementById("drawsocket").addEventListener("click", ()=>{
+            window.location.href = "index.html";
+        })
+
+        document.querySelector(".logo").addEventListener("click", ()=>{
+            window.location.href = "index.html";
+        })
+
+        document.querySelector("#hfmt_logo").addEventListener("click", ()=>{
+            window.location.href = "https://www.hfmt-hamburg.de/innovative-hochschule/";
+        })
+
+    })
+</script>

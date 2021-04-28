@@ -1,0 +1,55 @@
+<div class="drawsocket-web">
+    <!-- our stylesheet -->
+
+    <style scoped>
+        @import "assets/css/drawsocket-defaults.css";
+    </style>
+
+    <!-- library dependencies 
+        <script src="https://cdnjs.com/libraries/pdf.js"></script>
+
+    -->
+
+    <script src="https://cdn.jsdelivr.net/npm/d3-selection@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.17/Tone.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timesync@1.0.8/dist/timesync.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js" integrity="sha512-SG4yH2eYtAR5eK4/VL0bhqOsIb6AZSWAJjHOCmfhcaqTkDviJFoar/VYdG96iY7ouGhKQpAg3CMJ22BrZvhOUA==" crossorigin="anonymous"></script>
+
+    <!--
+            <link rel="stylesheet" href="assets/css/drawsocket-defaults.css">
+    <script src="scripts/d3-selection/dist/d3-selection.min.js"></script>
+    <script src="scripts/pdfjs-dist/build/pdf.js"></script>
+    <script src="scripts/tone/build/Tone.js"></script>
+    <script src="scripts/gsap/dist/gsap.min.js"></script>
+    -->
+
+    <!--main html setup -->
+    <div class="log" id="log"></div>
+
+    <div id="touchdiv"></div>
+
+    <!--main main main setup -->
+    <div id="main-div" >
+
+      <div id="main-html" ></div>
+
+      <svg  id="svg" 
+            version="1.1" 
+            baseProfile="full" 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" >
+          
+            <defs id="defs"></defs>
+            <g id="main-svg"></g>
+            
+      </svg>
+
+  </div>
+    <div id="forms" ></div>
+
+    <!-- our scripts -->
+    
+    <script src="assets/js/drawsocket-web-client.js"></script>
+
+</div>

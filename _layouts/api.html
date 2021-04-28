@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<!--
+<ul id="api_menu"></ul>
+-->
+
+<div id="main_text"> 
+{{ content }}
+</div>
+
+
+<script>
+
+let menu;
+
+window.addEventListener("load", ()=> {
+
+    menu = document.createElement("ul");
+    menu.id = "api_menu";
+
+    //let menu = document.getElementById("api_menu");
+
+    let keyArr = [];
+    document.querySelectorAll('.api_key').forEach( e => {
+        
+        let menuItem = document.createElement("li");
+        menuItem.classList.add("api_menu_item");
+        menuItem.innerHTML = e.innerHTML;
+        menuItem.dataset.refid = e.id;
+        keyArr.push({
+            el: menuItem,
+            y: e.getBoundingClientRect().y + window.scrollY
+        })
+
+        menu.appendChild(menuItem);
+
+        menuItem.addEventListener("click", ()=>{
+            window.location.hash = e.id;
+
+            document.querySelectorAll(".selected").forEach( s => {
+                s.classList.remove("selected");
+            });
+
+            menuItem.classList.add("selected");
+
+        })
+        
+    });
+
+    document.body.appendChild(menu);
+
+    keyArr.sort((a,b) => (a.y > b.y) ? 1 : ((b.y > a.y) ? -1 : 0));
+    console.log(keyArr);
+
+    document.addEventListener("scroll", (event) => {
+
+        let scrollPos = window.scrollY + 100;
+        let idx = 0;
+        for( let i = 0; i < keyArr.length-1; i++) {
+            if( keyArr[i+1].y > scrollPos )
+            {
+                idx = i;
+                break;
+            }
+        }
+
+        document.querySelectorAll(".selected").forEach( s => {
+            s.classList.remove("selected");
+        })
+        
+        keyArr[idx].el.classList.add("selected");
+
+    }, { capture: true });
+
+})
+</script>

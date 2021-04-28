@@ -1,0 +1,46 @@
+
+#api_menu {
+    position: fixed;
+    top: var(--top-menu-height);
+    left: 0px;
+    display: inline-block;
+    padding-inline-start: 0px;
+    margin-left: 25px;
+    width: 300px;
+}
+
+#api_menu li {
+    list-style: none;
+    margin-left: 0;
+}
+
+#api_menu li:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+#main_text {
+    position: absolute;
+    display: inline-block;
+    top: var(--top-menu-height);
+    left: 300px;
+    width: calc(100% - 300px);
+    overflow-x: hidden;
+
+}
+
+code {
+    color: black;
+    font-weight: 500;
+    background-color: #f6f8fa;
+}
+
+.highlight pre, .markdown-body pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 6px;
+}
+
