@@ -129,7 +129,7 @@ For example, in the above example, we we set the `id` to be the name "rectangula
 {: class="api_key"}
 
 
-## Storing the Sever State
+## Storing the Server State
 {: class="api_key"}
 
 The `drawsocket` object in Max accepts the `writecache` message, to write the current cached messages to a file on disk.
