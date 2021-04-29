@@ -668,17 +668,37 @@ For example, here is a button that sends a message to another client on being cl
 {: class="api_key"}
 
 * `function`: create and call user defined functions from JSON format.
-  * `body`, `args`
+
+### creating a function
+* `args` : (optional) string, or array of strings containing function argument variable names
+* `body` : a string that contains Javascript code. Note: don't forget to use double quotes on the outside and single quotes on the inside!
+* `id`: name of the function to be used to call it later
 
 ```
 {
   /key : "function",
   /val : {
+    /id : "foo",
     /args : ["a", "b"],
     /body : "console.log( a + b );"
   }
 }
 ```
+
+### calling a function
+* `id` : name of the function
+* `call` : (required) call arguments, use an empty string if no arguments are given.
+  
+```
+{
+  /key : "function",
+  /val : {
+    /id : "foo",
+    /call : [1, 2]
+  }
+}
+```
+
 
 * in some object type parsers, the parameters passed an object including the address `/function` can be used to create an anonymous function:
   
