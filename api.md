@@ -671,7 +671,7 @@ For example, here is a button that sends a message to another client on being cl
 
 ### creating a function
 * `args` : (optional) string, or array of strings containing function argument variable names
-* `body` : a string that contains Javascript code. Note: don't forget to use double quotes on the outside and single quotes on the inside!
+* `body` : a string that contains the Javascript code of the function body.
 * `id`: name of the function to be used to call it later
 
 ```
@@ -680,7 +680,9 @@ For example, here is a button that sends a message to another client on being cl
   /val : {
     /id : "foo",
     /args : ["a", "b"],
-    /body : "console.log( a + b );"
+    /body : " let sum = a + b;
+              console.log( sum );
+            "
   }
 }
 ```
