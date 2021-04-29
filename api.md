@@ -664,10 +664,11 @@ For example, here is a button that sends a message to another client on being cl
 }
 ```
 
-## __in dev keys__
+# __in dev keys__
 {: class="api_key"}
 
-* `function`: create and call user defined functions from JSON format.
+## __function__
+create and call user defined functions from JSON format.
 
 ### creating a function
 * `args` : (optional) string, or array of strings containing function argument variable names
@@ -700,9 +701,10 @@ For example, here is a button that sends a message to another client on being cl
   }
 }
 ```
+*prints `3` to browser console*
 
-
-* in some object type parsers, the parameters passed an object including the address `/function` can be used to create an anonymous function:
+## function as type
+In some object type parsers, the parameters passed an object including the address `/function` can be used to create an anonymous function:
   
   ```
   /id : "foo",
@@ -713,8 +715,11 @@ For example, here is a button that sends a message to another client on being cl
   }
   ```
 
-* `get` - ... needs some testing
+## __get__
+... needs some testing
   
+## __selector__
+
 * `selector` object with one of the following:
   *  `attr` : attribute to get
   *  `coord`: coord to get from bbox, valid options are bbox parameters from `getBoundingClientRect`, plus added `cx`, and `cy` values for the center of the bbox.
@@ -742,6 +747,7 @@ For example, here is a button that sends a message to another client on being cl
   	}
   ```
 
+## __relativeTo__
 * `relativeTo` make an element relative to another, note: the reference element must exist already
   * takes an argument of a string CSS style selector
   ```
