@@ -664,6 +664,20 @@ For example, here is a button that sends a message to another client on being cl
 }
 ```
 
+# __maxOutput__
+{: class="api_key"}
+
+Outputs object specified as `val` to Max if the browser is running in `jweb`.
+
+```
+/* : {
+  /key : "maxOutput",
+  /val : {
+    /someAddress : "hello maxOutput!"
+  }
+}
+```
+
 # __in dev keys__
 {: class="api_key"}
 
