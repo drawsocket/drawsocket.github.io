@@ -205,9 +205,12 @@ The `drawsocket` object accepts the `html_root` Max message to add a public asse
 
 
 # URL Arguments
+{: class="api_key"}
 
-## Using stored JSON files on other servers
-* `fetch` : name of file to load
+## __fetch__
+{: class="api_key"}
+
+* `fetch` : name of JSON file to load from a URL (can be on another server)
 * `prefix` : name of OSC prefix to select in file if different from the page URL (optional)
   
 A stored server/client state, saved in JSON format, may also be for online viewing, without the realtime WebSocket system, by serving the `drawsocket-default.html` file (with the associated scripts, and CSS files), and specifying a file name and prefix to load as discussed above via the `file` key.
@@ -218,6 +221,8 @@ For example, on a website called `www.foo.com` and a stored JSON file named `sto
 
 (Of course you could also save the HTML file under a different name of your choosing for your server)
 
-## Delay loading from cache
+
+## __wait_for_event__
+{: class="api_key"}
 
 * `wait_for_event` : delay state request until user has clicked on window, this is useful for cases where a play message may have been sent that needs to be offset by the clock synchronization. 
