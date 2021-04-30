@@ -178,14 +178,6 @@ or, to read only one URL prefix:
 `importcache <relative folder path>/<filename>.json /myURLPrefix`
 
 
-## Using stored JSON files on other servers
-A stored server/client state, saved in JSON format, may also be for online viewing, without the realtime WebSocket system, by serving the `drawsocket-default.html` file (with the associated scripts, and CSS files), and specifying a file name and prefix to load as discussed above via the `file` key.
-
-For example, on a website called `www.foo.com` and a stored JSON file named `stored-cache.json`, we could load the `/1` OSC-URL prefix by using the following URL arguments (using the standard `?`,`&`, `=` special characters):
-
-`http://www.foo.com/drawsocket-default.html?fetch=stored-cache.json&prefix=/1`
-
-(Of course you could also save the HTML file under a different name of your choosing for your server)
 
 # ping
 {: class="api_key"}
@@ -211,3 +203,21 @@ The `drawsocket` object accepts the `port` Max message to set the server port nu
 The `drawsocket` object accepts the `html_root` Max message to add a public asset folder to the server search path. Takes effect on start up.
 
 
+
+# URL Arguments
+
+## Using stored JSON files on other servers
+* `fetch` : name of file to load
+* `prefix` : name of OSC prefix to select in file if different from the page URL (optional)
+  
+A stored server/client state, saved in JSON format, may also be for online viewing, without the realtime WebSocket system, by serving the `drawsocket-default.html` file (with the associated scripts, and CSS files), and specifying a file name and prefix to load as discussed above via the `file` key.
+
+For example, on a website called `www.foo.com` and a stored JSON file named `stored-cache.json`, we could load the `/1` OSC-URL prefix by using the following URL arguments (using the standard `?`,`&`, `=` special characters):
+
+`http://www.foo.com/drawsocket-default.html?fetch=stored-cache.json&prefix=/1`
+
+(Of course you could also save the HTML file under a different name of your choosing for your server)
+
+## Delay loading from cache
+
+* `wait_for_event` : delay state request until user has clicked on window, this is useful for cases where a play message may have been sent that needs to be offset by the clock synchronization. 
