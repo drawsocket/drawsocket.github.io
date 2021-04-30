@@ -124,6 +124,25 @@ For example, in the above example, we we set the `id` to be the name "rectangula
 }
 ```
 
+## __cache__
+{: class="api_key"}
+
+Optionally, you can add the `cache` value set to `0` in the main object to signal that this message should not be cached.
+
+```
+/1 : {
+  /key : "svg",
+  /cache : 0,
+  /val : {
+    /new : "circle",
+    /id : "foo",
+    /cx : 100,
+    /cy : 100,
+    /r : 20,
+    /fill : "red"
+  }
+}
+```
 
 # Messages to Drawsocket
 {: class="api_key"}
