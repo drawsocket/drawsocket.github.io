@@ -502,7 +502,7 @@ For example, the Tone.js PolySynth needs a member of the Tone library to set as 
 ```
 
 
-### `cmd`
+### __cmd__
 
 A set of special commands wrappers for the Tone `Player` have been added to provide synchronized playback options:
 
