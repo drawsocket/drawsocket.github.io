@@ -501,6 +501,32 @@ For example, the Tone.js PolySynth needs a member of the Tone library to set as 
 }
 ```
 
+
+### `cmd`
+
+A set of special commands wrappers for the Tone `Player` have been added to provide synchronized playback options:
+
+* `start` : plays a sound file, synchronized to the server clock. The start position will be calculated using the timesync clock offset, either starting a some point into the file if late, or delaying the playback if early.
+* `play` : similar to `start` but plays from current time in the file (which might not be the beginning.
+  * `time` : (optional) if the `play` command is sent, `drawsocket` checks for the `time` parameter as the start point in the sound file (in seconds).
+* `pause` : stops playback, (alias `stop` has the same function)
+  * `time` : (optional), pauses and sets current time to `time` (in seconds), so that the next `play` message will start from this time.
+* `kill` : kills the playback (not sure how different this is from pause).
+* `reset` : stops and sets time to beginning.
+* `reverse` : reverses playback direction.
+* `restart` : restarts playback.
+
+```
+/* : {
+  /key : "sound",
+  /val : {
+    /id : "kick",
+    /cmd : "start"
+  }
+}
+```
+
+
 ## __file__
 {: class="api_key"}
 
