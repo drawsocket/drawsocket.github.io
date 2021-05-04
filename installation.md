@@ -24,15 +24,13 @@ __To install:__
 6. Refer to the examples in the `drawsocket` help file, and in the Max Extras menu.
 7. See the [Overview](overview.html) and [API](api.html) pages for more details.
    
-### Standalone Server
+### Standalone UDP Server
 
-Requires [node.js](https://nodejs.org/en/) to be installed and an internet connection.
+To install run: `npm install drawsocket`
 
-To install: `npm install drawsocket`
+The `drawsocket` server can then be run by importing the module and running `start`. 
 
-The `drawsocket` server can then be run by importing the module, initializing the server, and then calling `drawsocket.start()`.
-
-Initializing the server with the option `enable_udp` set to `true` starts the HTTP server with an additional UDP server which will listen for incoming `drawsocket` format OSC bundles and route them to the client browsers via WebSockets. See below for more information on server init options.
+Initializing the server with the option `enable_udp` set to `true` starts the HTTP server with an additional UDP server which will listen for incoming `drawsocket` format OSC bundles and route them to the client browsers via WebSockets.
 
 ```
 const drawsocket = require('drawsocket');
@@ -52,8 +50,6 @@ drawsocket.start();
 
 Using the [odot](https://github.com/CNMAT/CNMAT-odot/releases/tag/1.3.0-rc.3) Pd library you can send `drawsocket` compatible OSC bundles.
 See also the `pd-communicate.pd` patch in the /example folder.
-
-See the [Overview](overview.html) and [API](api.html) pages for more details.
 
 # Server Options
 
@@ -77,4 +73,14 @@ let params = {
 
 A test HTTP/UDP server can be run from within the `node_modules/drawsocket` folder, by running `node test`.
 
-Optional arguments set UDP send-to IP and port, for example: `node test 192.168.0.1 4444`.
+Optional arguments set UDP send-to IP and port, for example: 
+
+```
+node test --ip=192.168.0.1 --port=4444
+```
+
+For testing `drawsocket` from the repository, use the `-d` flag to set the path to `node_modules`:
+
+```
+node test --ip=192.168.0.1 --port=4444 -d 
+```
