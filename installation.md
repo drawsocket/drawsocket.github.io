@@ -6,11 +6,10 @@ title: installation
 # Installation
 {: class="api_key"}
 
-`drawsocket` can be run either as a standalone [node.js](https://nodejs.org/en/) server, or inside the [Max](https://cycling74.com/) media programming application.
+`drawsocket` can be run either as a [standalone server](#standalone-udp-server), or inside the [Max](https://cycling74.com/) media programming application.
 
 # Max Package
 {: class="api_key"}
-
 
 Requires [Max](https://cycling74.com/) version >= 8.1.0, and [CNMAT's Odot library](https://github.com/CNMAT/CNMAT-odot/releases), and works well in the [MaxScore](http://www.computermusicnotation.com) notation framework.
 
