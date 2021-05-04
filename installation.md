@@ -20,7 +20,7 @@ __To install:__
 2. Place the `drawsocket` repository in the `/Documents/Max 8/Packages` folder.
 3. Restart Max.
 4. Make a new patcher and put a `drawsocket` object (abstraction) in the patcher, and go to the `drawsocket` help patch.
-5. When running the `drawsocket` server for the first time: click on the `script npm install` message to download the required packages and libraries (note that you will need to be connected to the internet for the download to work).
+5. When running the `drawsocket` server for the first time: click on the `script npm install` message to download the `drawsocket` module and dependency libraries (note that you will need to be connected to the internet for the download to work).
 6. Refer to the examples in the `drawsocket` help file, and in the Max Extras menu.
 7. See the [Overview](overview.html) and [API](api.html) pages for more details.
    
@@ -28,10 +28,53 @@ __To install:__
 
 Requires [node.js](https://nodejs.org/en/) to be installed and an internet connection.
 
-__To install:__
-1. Unzip the downloaded release folder.
-2. Open a terminal window, and navigate to the `drawsocket/code/node` folder.
-4. Run `npm install` in the `node` folder, to download the required dependencies.
-5. Run `node .` to start the server.
-6. By default the server listens to UDP port `9999` and sends messages to localhost port `7777`.
-7. See the [Overview](overview.html) and [API](api.html) pages for more details.
+To install: `npm install drawsocket`
+
+The `drawsocket` server can then be run by importing the module, initializing the server, and then calling `drawsocket.start()`.
+
+Initializing the server with the option `enable_udp` set to `true` starts the HTTP server with an additional UDP server which will listen for incoming `drawsocket` format OSC bundles and route them to the client browsers via WebSockets. See below for more information on server init options.
+
+```
+const drawsocket = require('drawsocket');
+
+drawsocket.init({
+    node_path: __dirname + '/node_modules/',
+    userpath: __dirname,
+    http_port: 3004,
+    enable_udp: true,
+    udp_listen_port: 9999,
+    udp_send_port: 7777
+});
+
+drawsocket.start();
+
+```
+
+Using the [odot](https://github.com/CNMAT/CNMAT-odot/releases/tag/1.3.0-rc.3) Pd library you can send `drawsocket` compatible OSC bundles.
+See also the `pd-communicate.pd` patch in the /example folder.
+
+See the [Overview](overview.html) and [API](api.html) pages for more details.
+
+# Server Options
+
+```
+let params = {
+    node_path: __dirname + '/node_modules/',    // path to node modules for client includes
+    userpath: null,                             // path for custom asset serving folder
+    htmltemplate: '/lib/drawsocket-page.html',  // sets main drawsocket page, /lib/drawsocket-page.html is the default
+    infopage: "/lib/drawsocket-info.html",      // sets landing page, /lib/drawsocket-info.html is the default
+    http_port: 3002,                            // sets HTTP port, 3002 by default
+    post: "default",                            // by default, console.log, otherwise settable to other print function (e.g. Max.post)
+    outlet: "default",                          // by default, if UDP is enabled outlet will be set to use udp_server.send, else disabled
+    enable_udp: false,                          // enable/disable UDP server, off by default
+    udp_listen_port: 9999,                      // UDP listen port
+    udp_send_port: 7777,                        // UDP send-to port
+    udp_send_ip: "127.0.0.1"                    // UDP send-to IP address
+}
+```
+
+# Test Server
+
+A test HTTP/UDP server can be run from within the `node_modules/drawsocket` folder, by running `node test`.
+
+Optional arguments set UDP send-to IP and port, for example: `node test 192.168.0.1 4444`.
