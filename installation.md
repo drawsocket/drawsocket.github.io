@@ -11,7 +11,7 @@ title: installation
 # Max Package
 {: class="api_key"}
 
-Requires [Max](https://cycling74.com/) version >= 8.1.0, and [CNMAT's Odot library](https://github.com/CNMAT/CNMAT-odot/releases), and works well in the [MaxScore](http://www.computermusicnotation.com) notation framework.
+Requires [Max](https://cycling74.com/) version >= 8.1.0, and [CNMAT's Odot library](https://github.com/CNMAT/CNMAT-odot/releases).
 
 __To install:__
 0. Download the latest Max Package release from the [drawsocket-max](https://github.com/drawsocket/drawsocket-max) repository.
@@ -22,6 +22,8 @@ __To install:__
 5. When running the `drawsocket` server for the first time: click on the `script npm install` message to download the `drawsocket` module and dependency libraries (note that you will need to be connected to the internet for the download to work).
 6. Refer to the examples in the `drawsocket` help file, and in the Max Extras menu.
 7. See the [Overview](overview.html) and [API](api.html) pages for more details.
+
+`drawsocket` is also well integrated in the [MaxScore](http://www.computermusicnotation.com) notation framework.
 
 # Pure Data
 {: class="api_key"}
