@@ -4,7 +4,7 @@ layout: api
 
 # Use in production
 
-Note: `drawsocket` has been used in large scale production, but as with all technology, **the system must be tested before use in production**. Users are advised to thoroughly test your production network and display devices before any live performance.
+Note: `drawsocket` has been used in large scale production, but as with all technology, **the system must be tested before use in production**. Users are advised to thoroughly test your production network and display devices before any live performance. For best results, test with the same server, client, and networking hardware. Note that browser support for different web-technologies does vary between versions!
 
 
 # Basic Usage in Max
@@ -45,7 +45,6 @@ Alternatively, to keep the folders a little neater, the `drawsocket` abstraction
 
 # Default HTML and CSS files
 {: class="api_key"}
-
 
 By default the `drawsocket` server responds to all URL requests with the template HTML page, `drawsocket-page.html` which loads the required Javascript files, sets up the basic HTML objects, layers, and imports the `drawsocket-default.css` which sets up some default display properties.
 
@@ -144,8 +143,9 @@ Optionally, you can add the `cache` value set to `0` in the main object to signa
 }
 ```
 
-# Messages to Drawsocket
+# Messages to the Drawsocket Server
 {: class="api_key"}
+
 
 
 ## Storing the Server State
@@ -155,13 +155,19 @@ The `drawsocket` object in Max accepts the `writecache` message, to write the cu
 
 The folder path is relative to the folder path of the patch in which the `drawsocket` object is in.
 
-Message syntax:
+Message syntax for use in Max:
 
 `writecache <relative folder path>/<filename>.json`
 
 or, to write only one URL prefix:
 
 `writecache <relative folder path>/<filename>.json /myURLPrefix`
+
+
+If using the standalone UDP server:
+```
+/drawsocket/server : ["writecache", "foo-cache.json"]
+```
 
 
 ## Importing Server Cache from File
@@ -177,6 +183,10 @@ or, to read only one URL prefix:
 
 `importcache <relative folder path>/<filename>.json /myURLPrefix`
 
+If using the standalone UDP server:
+```
+/drawsocket/server : ["importcache", "foo-cache.json"]
+```
 
 
 # ping
@@ -185,6 +195,13 @@ or, to read only one URL prefix:
 The `drawsocket` object accepts the `ping` Max message to query the connection status of one or more clients.
 For example, the message `ping /*` pings all clients.
 
+
+If using the standalone UDP server:
+```
+/drawsocket/server : ["ping", "/*"]
+```
+
+
 # statereq
 {: class="api_key"}
 
@@ -192,17 +209,25 @@ The `drawsocket` object accepts the `statereq` Max message to trigger a client u
 
 For example, the message `statereq /*` triggers a state request for all clients.
 
+
+If using the standalone UDP server:
+```
+/drawsocket/server : ["statereq", "/*"]
+```
+
 # port
 {: class="api_key"}
 
 The `drawsocket` object accepts the `port` Max message to set the server port number. Takes effect on start up.
+
+When using `drawsocket` outside of Max, please see the [Server Options](installation.html#server-options) documentation.
 
 # html_root
 {: class="api_key"}
 
 The `drawsocket` object accepts the `html_root` Max message to add a public asset folder to the server search path. Takes effect on start up.
 
-
+When using `drawsocket` outside of Max, please see the [Server Options](installation.html#server-options) documentation.
 
 # URL Arguments
 {: class="api_key"}
@@ -226,3 +251,5 @@ For example, on a website called `www.foo.com` and a stored JSON file named `sto
 {: class="api_key"}
 
 * `wait_for_event` : delay state request until user has clicked on window, this is useful for cases where a play message may have been sent that needs to be offset by the clock synchronization. 
+
+`http://localhost:3002/foo?wait_for_event=1`

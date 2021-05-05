@@ -7,7 +7,7 @@ title: API
 
 Each `key` type has a slightly different API based on the needs of the objects created in the browser.
 
-Note: Please see the [Message Format](overview.html#message-format) and [Addressing the Client Browser](overview.html#addressing-the-client-browser) sections in the overview page for an introduction to the general `drawsocket` message syntax.
+Note: Please see the [Message Format](overview.html#message-format) and [Addressing the Client Browser](overview.html#addressing-the-client-browser) sections in the overview page for an introduction to the general `drawsocket` message syntax and server setup.
 {: class="highlight-note" }
 
 ## __svg__
