@@ -250,6 +250,6 @@ For example, on a website called `www.foo.com` and a stored JSON file named `sto
 ## __wait_for_event__
 {: class="api_key"}
 
-* `wait_for_event` : delay state request until user has clicked on window, this is useful for cases where a play message may have been sent that needs to be offset by the clock synchronization. 
+* `wait_for_event` : delay state request until user has clicked on window, this is useful for situations using WebAudio, video, or other media streams that require user interaction before media streams can be enabled, due to browser safety measures. When `wait_for_event` is enabled the client will wait to request the cached messages for its URL until the user has clicked the screen. 
 
 `http://localhost:3002/foo?wait_for_event=1`
