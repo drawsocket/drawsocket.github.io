@@ -28,7 +28,7 @@ __To install:__
 # Pure Data
 {: class="api_key"}
 
-Using the standalone UDP server, the [odot](https://github.com/CNMAT/CNMAT-odot/releases/tag/1.3.0-rc.3) Pd library you can send `drawsocket` compatible OSC bundles. See also the [pd-communicate.pd](https://github.com/drawsocket/drawsocket/blob/main/example/pd-communication.pd) patch in the `drawsocket/example` folder.
+Using the standalone UDP server, the [odot](https://github.com/CNMAT/CNMAT-odot/releases/tag/1.3.0-rc.3) Pd library can be used to send `drawsocket` compatible OSC bundles. See also the [pd-communicate.pd](https://github.com/drawsocket/drawsocket/blob/main/example/pd-communication.pd) patch in the `drawsocket/example` folder.
 
 # Standalone UDP Server
 {: class="api_key"}
