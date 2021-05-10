@@ -11,4 +11,4 @@ Developed at the Hochschule für Musik und Theater Hamburg in 2019 for a series 
 
 <img src="./assets/images/tunnel-concert-image.jpg" height="400px">
 
-<img src="./assets/images/drawsocket-browsers-diagram.svg" height="400px">
+<img src="./assets/images/drawsocket-browsers-diagram.svg" width="640px">
