@@ -10,3 +10,5 @@ Developed at the Hochschule für Musik und Theater Hamburg in 2019 for a series 
 `drawsocket` provides a unified interface for controlling diverse media features of web-browsers (SVG, WebAudio, animation, etc.), which can be utilized in many ways--and additionally provides access to browser mouse and multi-touch gesture interaction data, which can be used for the creating of graphical user interfaces.
 
 <img src="./assets/images/tunnel-concert-image.jpg" height="400px">
+
+<img src="./assets/images/drawsocket-browsers-diagram.svg" height="400px">
