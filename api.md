@@ -322,7 +322,8 @@ Additionally, HTML layers may be created with a new `div` tag, just as discussed
 * `tweens`: an `tween` object, or *sequential* array of `tween` objects containing the keywords:
   * `target`: a CSS selector to choose which objects are animated (e.g. `#foo`).
   * `dur`: the duration of the tween animation in seconds, note that within the timeline, the `tweens` are sequential, so each `dur` is the duration for that section within the timeline.
-  * `vars`: an object containing the variables to animate, and their destination values, and any other TweenMax special properties (see the [TweenMax vars documentation](https://greensock.com/docs/TweenMax/vars) for more information).
+  * `vars`: an object containing the variables to animate, and their destination values, and any other TweenMax special properties (see the [TweenMax vars documentation](https://greensock.com/docs/v3/GSAP/gsap.to()) for more information).
+    * `ease`: easing function for tween, note that the __GSAP default is "power1.out"__ , in most cases you will want to set this to be "linear".
 * `cmd`: same as the `tween` commands, but applied to the timeline.
 
 A special `function` keyword has been added to handle the `tween` `var` callbacks. For example: 
